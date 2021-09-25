@@ -1,5 +1,6 @@
 <script>
 	import ConditionalSentence from './basic-concepts/ConditionalSentence.svelte'
+	import Loop from './basic-concepts/Loop.svelte'
 	export let name;
 </script>
 
@@ -7,6 +8,7 @@
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<ConditionalSentence/>
+	<Loop/>
 </main>
 
 <style>
