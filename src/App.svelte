@@ -3,16 +3,19 @@
 		from './basic-concepts/ConditionalSentence.svelte'
 	import Loop from './basic-concepts/Loop.svelte'
 	import Input from './basic-concepts/Input.svelte'
-
-	export let name
+	import Name from './components/Name.svelte'
+	let names = ['영재','youngjae','영재2']
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
+	<h1>Hello!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<ConditionalSentence/>
 	<Loop/>
 	<Input/>
+	{#each names as name}
+		<Name {name}/>
+	{/each}
 </main>
 
 <style>
