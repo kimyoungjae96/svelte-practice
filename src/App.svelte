@@ -4,7 +4,11 @@
 	import Loop from './basic-concepts/Loop.svelte'
 	import Input from './basic-concepts/Input.svelte'
 	import Name from './components/Name.svelte'
-	let names = ['영재','youngjae','영재2']
+	import {storeName} from './store'
+	import StoreTest from './components/StoreTest.svelte'
+
+	let names = ['영재', 'youngjae', '영재2']
+	$storeName = names[0]
 </script>
 
 <main>
@@ -12,6 +16,7 @@
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<ConditionalSentence/>
 	<Loop/>
+	<StoreTest/>
 	<Input/>
 	{#each names as name}
 		<Name {name}/>
