@@ -1,7 +1,10 @@
 <script>
-	import ConditionalSentence from './basic-concepts/ConditionalSentence.svelte'
+	import ConditionalSentence
+		from './basic-concepts/ConditionalSentence.svelte'
 	import Loop from './basic-concepts/Loop.svelte'
-	export let name;
+	import Input from './basic-concepts/Input.svelte'
+
+	export let name
 </script>
 
 <main>
@@ -9,6 +12,7 @@
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	<ConditionalSentence/>
 	<Loop/>
+	<Input/>
 </main>
 
 <style>
