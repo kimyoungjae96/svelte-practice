@@ -1,12 +1,8 @@
 <script>
-    import Router from 'svelte-spa-router'
-    import Header from '~/components/Header.svelte'
-    import routes from '~/routes'
+  import Router from 'svelte-spa-router';
+  import Header from '~/components/Header.svelte';
+  import routes from '~/routes';
 </script>
 
-<Header/>
-<Router routes={routes}/>
-
-<style lang="scss">
-
-</style>
+<Header />
+<Router routes="{routes}" />
