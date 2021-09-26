@@ -1,0 +1,20 @@
+{
+  "imports": {
+    "/index.html": {
+      "entry": [
+        "/_dist_/main.js"
+      ],
+      "css": [
+        "/favicon.png"
+      ],
+      "js": [
+        "/_dist_/App.svelte.css.proxy.js",
+        "/_dist_/App.svelte.js",
+        "/_dist_/components/Header.svelte.js",
+        "/_dist_/main.js",
+        "/_snowpack/pkg/svelte/internal.js"
+      ]
+    }
+  },
+  "generated": {}
+}

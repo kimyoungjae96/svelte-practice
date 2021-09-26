@@ -1,0 +1,1 @@
+import{SvelteComponent as a,detach as s,element as l,init as c,insert as i,noop as n,safe_not_equal as p}from"../../_snowpack/pkg/svelte/internal.js";function d(r){let e;return{c(){e=l("header"),e.textContent="\uD5E4\uB354"},m(t,o){i(t,e,o)},p:n,i:n,o:n,d(t){t&&s(e)}}}class u extends a{constructor(e){super();c(this,e,null,d,p,{})}}export default u;

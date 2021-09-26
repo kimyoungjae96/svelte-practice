@@ -28,6 +28,10 @@ module.exports = {
     ['@snowpack/plugin-babel',{
       transformOptions: babelOptions()
     }],
-    '@snowpack/plugin-dotenv'
-  ]
+    '@snowpack/plugin-dotenv',
+    '@snowpack/plugin-optimize'
+  ],
+  alias:{
+    '~': './src'
+  }
 }
