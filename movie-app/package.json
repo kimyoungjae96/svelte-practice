@@ -1,0 +1,15 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-svelte": "^3.7.0",
+    "snowpack": "^3.8.8",
+    "svelte": "^3.43.0"
+  }
+}

@@ -6,6 +6,7 @@
 	import Name from './components/Name.svelte'
 	import {storeName} from './store'
 	import StoreTest from './components/StoreTest.svelte'
+	import SimpleTodo from './screens/SimpleTodo.svelte'
 
 	let names = ['영재', 'youngjae', '영재2']
 	$storeName = names[0]
@@ -21,6 +22,7 @@
 	{#each names as name}
 		<Name {name}/>
 	{/each}
+	<SimpleTodo/>
 </main>
 
 <style>
