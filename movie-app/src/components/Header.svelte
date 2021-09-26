@@ -13,14 +13,17 @@
     {
       href: '/',
       name: 'Search',
+      path: '/',
     },
     {
       href: '/movie/tt4520988',
       name: 'Movie',
+      path: '/movie/*',
     },
     {
       href: '/about',
       name: 'About',
+      path: '/about',
     },
   ];
 </script>
@@ -29,9 +32,9 @@
   <Logo />
   <nav>
     <ul>
-      {#each menus as { href, name } (name)}
+      {#each menus as { href, name, path } (name)}
         <li>
-          <a use:link use:active="{href}" href="{href}">{name}</a>
+          <a use:link use:active="{path}" href="{href}">{name}</a>
         </li>
       {/each}
     </ul>
