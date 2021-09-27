@@ -11,3 +11,10 @@ $color-white-5: rgba($color-white, 0.05);
 
 $color-primary: #fdc000;
 $color-area: #1c212e;
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 0 0;
+  position: relative;
+}
