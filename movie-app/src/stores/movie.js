@@ -16,6 +16,7 @@ export function initMovies() {
 export async function searchMovies(payload) {
   if (get(loading)) return;
   loading.set(true);
+  message.set('')
 
   let total = 0;
 
