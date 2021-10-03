@@ -53,7 +53,7 @@
 </style>
 
 <script>
-  import { link } from 'svelte-spa-router';
+  import { link, push } from 'svelte-spa-router';
   import active from 'svelte-spa-router/active';
   import Logo from '~/components/Logo';
 
@@ -87,7 +87,12 @@
       {/each}
     </ul>
   </nav>
-  <div class="user">
+  <div
+    class="user"
+    on:click="{() => {
+      push('/about');
+    }}"
+  >
     <img src="/assets/svelte.png" alt="user" />
   </div>
 </header>
