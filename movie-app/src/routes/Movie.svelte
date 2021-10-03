@@ -39,6 +39,7 @@
     display: flex;
   }
   .poster {
+    position: relative;
     flex-shrink: 0;
     width: 500px;
     height: 500px * 3/2;
@@ -92,9 +93,20 @@
   import Loader from '../components/Loader.svelte';
   import { searchMovieBy, theMovie, loading } from '~/stores/movie';
 
+  let imageLoading = true;
+
   export let params = {};
   searchMovieBy(params.id);
-  console.log('r', $theMovie);
+
+  function requestDifferentSizeImage(url, size = 700) {
+    const src = url.replace('SX300', `SX${size}`);
+    const img = document.createElement('img');
+    img.src = src;
+    img.addEventListener('load', () => {
+      imageLoading = false;
+    });
+    return src;
+  }
 </script>
 
 <div class="container">
@@ -114,9 +126,15 @@
   {:else}
     <div class="movie-details">
       <div
-        style="background-image: url({$theMovie.Poster})"
+        style="background-image: url({requestDifferentSizeImage(
+          $theMovie.Poster,
+        )})"
         class="poster"
-      ></div>
+      >
+        {#if imageLoading}
+          <Loader scale="0.7" absolute />
+        {/if}
+      </div>
       <div class="specs">
         <div class="title">
           {$theMovie.Title}
