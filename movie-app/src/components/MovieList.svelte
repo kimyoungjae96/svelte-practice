@@ -16,7 +16,6 @@
   import { movies, loading } from '~/stores/movie';
   import MovieCard from '~/components/MovieCard';
   import Loader from '~/components/Loader';
-  console.log($movies);
 </script>
 
 <div class="movie-list">

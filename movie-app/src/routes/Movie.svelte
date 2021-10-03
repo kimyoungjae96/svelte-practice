@@ -46,8 +46,10 @@
 
 <script>
   import Loader from '../components/Loader.svelte';
+  import { searchMovieBy } from '~/stores/movie';
 
   export let params = {};
+  searchMovieBy(params.id);
 </script>
 
 <div class="container">

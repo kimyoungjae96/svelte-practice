@@ -4,13 +4,15 @@ import _unionBy from 'lodash/unionBy';
 
 export const movies = writable([]);
 export const loading = writable(false);
+export const theMovie = writable({});
+
+const OMDB_API_KEY = '7035c60c';
 
 export async function searchMovies(payload) {
   if (get(loading)) return;
   loading.set(true);
 
   const { title, type, year, number } = payload;
-  const OMDB_API_KEY = '7035c60c';
 
   const res = await axios.get(
     `https://www.omdbapi.com/?i=tt3896198&apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}`,
@@ -32,3 +34,14 @@ export async function searchMovies(payload) {
 
   loading.set(false);
 }
+
+export const searchMovieBy = async movieId => {
+  if (get(loading)) return;
+  loading.set(true);
+  const res = await axios.get(
+    `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${movieId}&plot=full`,
+  );
+  console.log(res);
+  theMovie.set(res);
+  loading.set(false);
+};
