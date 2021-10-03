@@ -4,6 +4,9 @@
       font-size: 80px;
       font-family: 'Oswald', sans-serif;
       line-height: 1;
+      @media #{$mobile} {
+        font-size: 60px;
+      }
       span {
         color: $color-primary;
       }

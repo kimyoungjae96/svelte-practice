@@ -12,9 +12,18 @@ $color-white-5: rgba($color-white, 0.05);
 $color-primary: #fdc000;
 $color-area: #1c212e;
 
+$tablet: 'all and (max-width: 1200px)';
+$mobile: 'all and (max-width: 720px)';
+
 .container {
   max-width: 1120px;
   margin: 0 auto;
   padding: 40px 0 0;
   position: relative;
+  @media #{$tablet} {
+    padding: 40px 40px 0;
+  }
+  @media all and (max-width: 720px) {
+    padding: 40px 20px 0;
+  }
 }
