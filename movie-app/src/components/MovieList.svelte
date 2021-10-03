@@ -13,12 +13,16 @@
 </style>
 
 <script>
-  import { movies } from '~/stores/movie';
+  import { movies, loading } from '~/stores/movie';
   import MovieCard from '~/components/MovieCard';
+  import Loader from '~/components/Loader';
   console.log($movies);
 </script>
 
 <div class="movie-list">
+  {#if $loading}
+    <Loader />
+  {/if}
   <div class="movies">
     {#each $movies as movie (movie.imdbID)}
       <MovieCard movie="{movie}" />
