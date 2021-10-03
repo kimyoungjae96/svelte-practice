@@ -9,7 +9,7 @@
 <Header />
 {#key $location}
   <div in:fade>
-    <Router routes="{routes}" />
+    <Router routes="{routes}" restoreScrollState="{true}" />
   </div>
 {/key}
 <Footer />
