@@ -8,8 +8,8 @@
     "last 2 versions"
   ],
   "scripts": {
-    "dev": "snowpack dev",
-    "dev:netlify": "netlify dev",
+    "dev:snowpack": "snowpack dev",
+    "dev": "netlify dev",
     "build": "snowpack build"
   },
   "devDependencies": {

@@ -1,37 +1,44 @@
-const production = process.env.NODE_ENV === 'production'
+const production = process.env.NODE_ENV === 'production';
 
-function babelOptions(){
+function babelOptions() {
   return {
-    plugins: production ? ['transform-remove-console'] : []
-  }
+    plugins: production ? ['transform-remove-console'] : [],
+  };
 }
 
 module.exports = {
-  mount:{
+  mount: {
     public: '/',
-    src: '/_dist_'
+    src: '/_dist_',
   },
-  plugins:[
-    ['@snowpack/plugin-svelte',{
-      preprocess: require('svelte-preprocess')({
-        scss:{
-          prependData: '@import "./src/scss/main.scss";'
-        },
-        postcss:{
-          plugins: [
-            require('autoprefixer')()
-          ]
-        },
-        babel: babelOptions()
-      })
-    }],
-    ['@snowpack/plugin-babel',{
-      transformOptions: babelOptions()
-    }],
+  plugins: [
+    [
+      '@snowpack/plugin-svelte',
+      {
+        preprocess: require('svelte-preprocess')({
+          scss: {
+            prependData: '@import "./src/scss/main.scss";',
+          },
+          postcss: {
+            plugins: [require('autoprefixer')()],
+          },
+          babel: babelOptions(),
+        }),
+      },
+    ],
+    [
+      '@snowpack/plugin-babel',
+      {
+        transformOptions: babelOptions(),
+      },
+    ],
     '@snowpack/plugin-dotenv',
-    '@snowpack/plugin-optimize'
+    '@snowpack/plugin-optimize',
   ],
-  alias:{
-    '~': './src'
-  }
-}
+  alias: {
+    '~': './src',
+  },
+  devOptions: {
+    port: 8079,
+  },
+};
